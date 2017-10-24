@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/wearymachine/dogwatch/issues"
   },
-  "homepage": "https://github.com/wearymachine/dogwatch#readme"
+  "homepage": "https://github.com/wearymachine/dogwatch#readme",
+  "dependencies": {
+    "yarn": "^1.2.1"
+  }
 }
