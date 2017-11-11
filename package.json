@@ -17,9 +17,13 @@
   },
   "homepage": "https://github.com/wearymachine/dogwatch#readme",
   "dependencies": {
+    "compression": "^1.7.1",
     "express": "^4.16.2",
     "mongodb": "^2.2.33",
     "mongoose": "^4.13.1",
+    "path": "^0.12.7",
+    "rollup": "^0.51.3",
+    "urijs": "^1.19.0",
     "yarn": "^1.2.1"
   }
 }
