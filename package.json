@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/wearymachine/dogwatch#readme",
   "dependencies": {
+    "express": "^4.16.2",
+    "mongodb": "^2.2.33",
+    "mongoose": "^4.13.1",
     "yarn": "^1.2.1"
   }
 }
