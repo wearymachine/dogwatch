@@ -5,7 +5,7 @@ import https from 'https';
 import process from 'process';
 import URI from 'urijs';
 
-import Dogs from './models/dog';
+// import Dogs from './models/dog';
 
 const errorStatusMessages = {
     '401': 'Unauthroized',
@@ -14,7 +14,7 @@ const errorStatusMessages = {
     '404': 'Not Found',
     '500': 'Internal Server Error'
 };
-const baseRoute = '/dogwatch';
+// const baseRoute = '/dogwatch';
 const mainAppFile = `${__dirname}/client/index.html`;
 
 const httpServerOptions = {
@@ -59,20 +59,31 @@ app.get('/', function(req, res) {
     res.sendFile(mainAppFile);
 });
 
-app.get(baseRoute, function(req, res) {
-    res.sendFile(mainAppFile);
+app.get('/*', function(req, res) {
+    const requestedUri = URI(req.url);
+    const lastSegmentContainsDot = /\./.test(requestedUri.filename());
+
+    if (lastSegmentContainsDot) {
+        res.sendFile(`${__dirname}/client/${req.url}`);
+    } else {
+        res.sendFile(mainAppFile);
+    }
 });
 
-app.get(`${baseRoute}/`, function(req, res) {
-    res.sendFile(mainAppFile);
-});
+// app.get(baseRoute, function(req, res) {
+//     res.sendFile(mainAppFile);
+// });
+//
+// app.get(`${baseRoute}/`, function(req, res) {
+//     res.sendFile(mainAppFile);
+// });
 
-app.get(`${baseRoute}/dogs/:dogId`, function(req, res) {
-    const {dogId} = req;
-    const dog = Dogs.findById(dogId);
-
-    res.send(dog);
-})
+// app.get(`${baseRoute}/dogs/:dogId`, function(req, res) {
+//     const {dogId} = req;
+//     const dog = Dogs.findById(dogId);
+//
+//     res.send(dog);
+// })
 
 app.use(function(err, req, res, next) {
     // eslint-disable-next-line no-console
