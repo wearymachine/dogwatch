@@ -1,0 +1,13 @@
+{
+    "DeploymentConfig": {
+        "releaseVersion": "release-0.0.0-0",
+        "atlasHost": "https://02-njsrp-dev-ue1a.remedypartners.com:8443",
+        "auth0url": "https://remedy-dev.auth0.com/",
+        "auth0domain": "remedy-dev.auth0.com",
+        "auth0clientId": "4yGjzPD39LN3khoG4G5oz2yLDbBe2Qka",
+        "timeoutPeriod": 900000,
+        "timeoutCheckPeriod": 60000,
+        "segmentClientId": "iMr0jZmKSGmwbRuYHfj8tQhJNhV3SzS6",
+        "flags": {}
+    }
+}
